@@ -1,0 +1,56 @@
+* {
+    font-family: "JetBrainsMono Nerd Font";
+}
+
+.top-window-one,
+.top-window-two,
+.top-window-three,
+.top-window-four,
+.top-window-five,
+.top-window-six,
+.top-window-seven,
+.top-window-eight,
+.top-window-nine {
+    background-color: transparent;
+}
+
+.bottom-layout {
+    background-color: transparent;
+}
+
+.clock {
+    background-color: transparent;
+    color: #FF554E;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.menu-btn-closed {
+    background-color: transparent;
+    color: #FF554E;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.hostname {
+    background-color: transparent;
+    color: #FF554E;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.workspace {
+    background-color: transparent;
+}
+
+.workspaces-widget,
+button,
+image {
+    all: unset; // Reset everything
+    background-color: transparent;
+}
+
+
+.top-image-layout{
+    background-color: transparent;
+}

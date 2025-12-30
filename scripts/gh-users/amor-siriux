@@ -1,0 +1,4 @@
+amor-siriux
+gh auth switch --user amor-siriux
+git config --global user.name "amor-siriux"
+git config --global user.email "amor@siriux.ai"
