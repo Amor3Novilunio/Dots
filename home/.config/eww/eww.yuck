@@ -1,0 +1,285 @@
+; ------------------------------
+;  Clock
+; ------------------------------
+
+(defpoll clock-fns :interval "1s" "date '+%I:%M:%S %p'")
+
+(defwidget clock-widget []
+  (box :class "clock-box"
+    (label :text "${clock-fns}")
+  )
+)
+
+(defwindow clock
+  :monitor "HDMI-A-1"
+  :geometry (geometry
+    :x "0%"
+    :y "0%"
+    :width "10%"
+    :height "10px"
+  :anchor "top right")
+  :stacking "bg"
+  :anchor "top right"
+  (clock-widget)
+)
+
+
+
+; ------------------------------
+;  Top Bar Layout
+; ------------------------------
+
+(defwidget short-bar-widget[]
+  (box :orientation "horizontal" :space-evenly true :class "bar"
+    (image :path "/home/amor_iii/.config/eww/images/cyberpunk/short_bar.png"
+    :image-width 300 )
+  )
+)
+
+(defwidget long-bar-widget[]
+  (box :orientation "horizontal" :space-evenly true :class "bar"
+    (image :path "/home/amor_iii/.config/eww/images/cyberpunk/long_bar.png"
+    :image-width 800)
+  )
+)
+
+(defpoll system-hostname :interval "30m" "hostname")
+
+(defwidget hostname-widget []
+  (label :text "${system-hostname}")
+)
+
+(defwindow hostname
+  :monitor "eDP-2"
+  :geometry (geometry
+    :x "2.5%"
+    :y "1%"
+    :width "5%"
+    :height "0%"
+  :anchor "top right")
+  :stacking "bg"
+  :anchor "top right"
+  (hostname-widget)
+)
+
+(defwindow menu-btn-closed
+  :monitor "eDP-2"
+  :geometry (geometry
+    :x "-0.5%"
+    :y "1%"
+    :width "5%"
+    :height "0%"
+  :anchor "top left")
+  :stacking "bg"
+  :anchor "top left"
+  "F1"
+)
+
+(defwindow top-window-one
+  :monitor "eDP-2"
+  :geometry (geometry
+    :x "0.5%"
+    :y "-2.5%"
+    :width "0%"
+    :height "0%"
+  :anchor "top left")
+  :stacking "bg"
+  :anchor "top center"
+  (short-bar-widget)
+)
+
+(defwindow top-window-two
+  :monitor "eDP-2"
+  :geometry (geometry
+    :x "13.85%"
+    :y "-2.5%"
+    :width "0%"
+    :height "0%"
+  :anchor "top left")
+  :stacking "bg"
+  :anchor "top center"
+  (short-bar-widget)
+)
+
+(defwindow top-window-three
+  :monitor "eDP-2"
+  :geometry (geometry
+    :x "27.15%"
+    :y "-2.5%"
+    :width "0%"
+    :height "0%"
+  :anchor "top left")
+  :stacking "bg"
+  :anchor "top center"
+  (short-bar-widget)
+)
+
+(defwindow top-window-four
+  :monitor "eDP-2"
+  :geometry (geometry
+    :x "40.45%"
+    :y "-2.5%"
+    :width "0%"
+    :height "0%"
+  :anchor "top left")
+  :stacking "bg"
+  :anchor "top center"
+  (short-bar-widget)
+)
+
+(defwindow top-window-five
+  :monitor "eDP-2"
+  :geometry (geometry
+    :x "53.80%"
+    :y "-2.5%"
+    :width "0%"
+    :height "0%"
+  :anchor "top left")
+  :stacking "bg"
+  :anchor "top center"
+  (short-bar-widget)
+)
+
+(defwindow top-window-six
+  :monitor "eDP-2"
+  :geometry (geometry
+    :x "75%"
+    :y "-2.5%"
+    :width "0%"
+    :height "0%"
+  :anchor "top left")
+  :stacking "bg"
+  :anchor "top center"
+  (short-bar-widget)
+)
+
+
+; ------------------------------
+;  Bottom Bar Layout
+; ------------------------------
+
+(defpoll active_ws :interval "0.1s"
+`hyprctl activeworkspace -j | jq -r '.name'`)
+
+(defwidget workspaces-widget []
+  (box :class "workspaces"
+       :orientation "h"
+       :space-evenly true
+       :halign "start"
+       :monitor "eDP-2"
+
+    ; workspace 1
+    (button :onclick "hyprctl dispatch workspace 1"
+      (image
+        :path { active_ws == "1" 
+          ? "/home/amor_iii/.config/eww/images/cyberpunk/wsActive.png"
+          : "/home/amor_iii/.config/eww/images/cyberpunk/wsInActive.png" }
+        :image-width 24 :image-height 24))
+
+    ; workspace 2
+    (button :onclick "hyprctl dispatch workspace 2"
+      (image
+        :path { active_ws == "2" 
+          ? "/home/amor_iii/.config/eww/images/cyberpunk/wsActive.png"
+          : "/home/amor_iii/.config/eww/images/cyberpunk/wsInActive.png" }
+        :image-width 24 :image-height 24))
+
+    ; workspace 3
+    (button :onclick "hyprctl dispatch workspace 3"
+      (image
+        :path { active_ws == "3" 
+          ? "/home/amor_iii/.config/eww/images/cyberpunk/wsActive.png"
+          : "/home/amor_iii/.config/eww/images/cyberpunk/wsInActive.png" }
+        :image-width 24 :image-height 24))
+
+    ; workspace 4
+    (button :onclick "hyprctl dispatch workspace 4"
+      (image
+        :path { active_ws == "4" 
+          ? "/home/amor_iii/.config/eww/images/cyberpunk/wsActive.png"
+          : "/home/amor_iii/.config/eww/images/cyberpunk/wsInActive.png" }
+        :image-width 24 :image-height 24))
+
+    ; workspace 5
+    (button :onclick "hyprctl dispatch workspace 5"
+      (image
+        :path { active_ws == "5" 
+          ? "/home/amor_iii/.config/eww/images/cyberpunk/wsActive.png"
+          : "/home/amor_iii/.config/eww/images/cyberpunk/wsInActive.png" }
+        :image-width 24 :image-height 24))
+
+    ; workspace 6
+    (button :onclick "hyprctl dispatch workspace 6"
+      (image
+        :path { active_ws == "6" 
+          ? "/home/amor_iii/.config/eww/images/cyberpunk/wsActive.png"
+          : "/home/amor_iii/.config/eww/images/cyberpunk/wsInActive.png" }
+        :image-width 24 :image-height 24))
+
+    ; workspace 7
+    (button :onclick "hyprctl dispatch workspace 7"
+      (image
+        :path { active_ws == "7" 
+          ? "/home/amor_iii/.config/eww/images/cyberpunk/wsActive.png"
+          : "/home/amor_iii/.config/eww/images/cyberpunk/wsInActive.png" }
+        :image-width 24 :image-height 24))
+
+    ; workspace 8
+    (button :onclick "hyprctl dispatch workspace 8"
+      (image
+        :path { active_ws == "8"
+          ? "/home/amor_iii/.config/eww/images/cyberpunk/wsActive.png"
+          : "/home/amor_iii/.config/eww/images/cyberpunk/wsInActive.png" }
+        :image-width 24 :image-height 24))
+
+    ; workspace 9
+    (button :onclick "hyprctl dispatch workspace 9"
+      (image
+        :path { active_ws == "9" 
+          ? "/home/amor_iii/.config/eww/images/cyberpunk/wsActive.png"
+          : "/home/amor_iii/.config/eww/images/cyberpunk/wsInActive.png" }
+        :image-width 24 :image-height 24))
+
+    ; workspace 10
+    (button :onclick "hyprctl dispatch workspace 10"
+      (image
+        :path { active_ws == "10" 
+          ? "/home/amor_iii/.config/eww/images/cyberpunk/wsActive.png"
+          : "/home/amor_iii/.config/eww/images/cyberpunk/wsInActive.png" }
+        :image-width 24 :image-height 24))
+  )
+)
+
+(defwindow workspace
+  :monitor "eDP-2"
+  :geometry (
+    geometry :x "1%"
+    :y "1%"
+    :width "90%"
+    :height "0"
+  :anchor "bottom left")
+  (workspaces-widget)
+)
+
+//
+
+(defwidget top-bar-widget[]
+  (box :orientation "horizontal" :space-evenly true :class "bar"
+    (image :path "/home/amor_iii/.config/eww/images/top.png"
+    :image-width 1900 )
+  )
+)
+
+(defwindow top-image-layout
+  :monitor "HDMI-A-2"
+  :geometry (geometry
+    :x "0%"
+    :y "2%"
+    :width "100%"
+    :height "0%"
+  :anchor "top center")
+  :stacking "bg"
+  :exclusive "true"
+  :anchor "top center"
+  (top-bar-widget)
+)

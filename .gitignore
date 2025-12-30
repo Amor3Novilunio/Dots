@@ -1,0 +1,15 @@
+init.sh
+etc/nixos/hardware-configuration.nix
+
+# Ignore everything under Code
+/home/.config/Code/*
+
+# Except the User folder
+!/home/.config/Code/User/
+!/home/.config/Code/User/**
+
+# Inside User: ignore everything
+/home/.config/Code/User/*
+
+# Except settings.json
+!/home/.config/Code/User/settings.json

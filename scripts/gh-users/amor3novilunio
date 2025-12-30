@@ -1,0 +1,4 @@
+Amor3Novilunio
+gh auth switch --user Amor3Novilunio
+git config --global user.name "Amor3Novilunio"
+git config --global user.email "amor.3.novilunio@gmail.com"
