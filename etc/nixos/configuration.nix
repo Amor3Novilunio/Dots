@@ -8,6 +8,8 @@
     ./hardware.nix
     # ? - Bootloader and boot-related configurations
     ./boot.nix
+    # ? - Laptop-specific power management (CPU scaling, suspend, battery optimizations)
+    ./power-management.nix
 
     # ? - System-wide environment variables and packages
     ./environment.nix

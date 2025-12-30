@@ -75,5 +75,37 @@
 
     };
 
+    # ? - Automatic CPU frequency scaling for battery and performance optimization
+    # * - "https://search.nixos.org/options?channel=25.11&query=services.auto-cpufreq"
+    auto-cpufreq = {
+      # ? - Enable automatic CPU frequency scaling
+      # * - "https://search.nixos.org/options?channel=25.11&query=services.auto-cpufreq.enable"
+      enable = true;
+    };
+
+    # ? - Thermald for CPU thermal management
+    # * - "https://search.nixos.org/options?channel=25.11&query=services.thermald"
+    thermald = {
+      # ? - Enable thermald service to monitor and control CPU temperature
+      # * - "https://search.nixos.org/options?channel=25.11&query=services.thermald.enable"
+      enable = true;
+    };
+
+    # ? - Upower for battery and power management
+    # * - "https://search.nixos.org/options?channel=25.11&query=services.upower"
+    upower = {
+      # ? - Enable upower service to manage power events and battery info
+      # * - "https://search.nixos.org/options?channel=25.11&query=services.upower.enable"
+      enable = true;
+    };
+
+    # ? - UDisks2 for disk and storage management
+    # * - "https://search.nixos.org/options?channel=25.11&query=services.udisk2"
+    udisks2 = {
+      # ? - Enable udisks2 to manage disks, mounts, and storage devices
+      # * - "https://search.nixos.org/options?channel=25.11&query=services.udisk2.enable"
+      enable = true;
+    };
+
   };
 }
