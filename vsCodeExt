@@ -1,0 +1,34 @@
+
+// Essentials
+atom keymap
+better comments
+better nix syntax
+colorize
+dotenv
+error lens
+es7 react + native
+even better toml
+gitlense
+import cost
+indent-rainbow
+material icon theme
+nix
+nixfmt
+node.js modules intellisense
+npm intellisense
+one dark pro
+path intellisense
+prettier
+rust analyzer
+shell-format
+tailwind css intellisense
+trail spaces
+version lens
+
+// Optional
+auto close tag
+auto complete tag
+auto import
+auto rename tag
+html css support
+javascript and typescript nightly

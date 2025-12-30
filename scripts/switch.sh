@@ -3,6 +3,18 @@
 set -e
 
 # -----------------------------------------------
+# Prompt for user password
+echo "🔐 Please enter your password to continue:"
+# The -v flag stores the password in a variable (but won't echo it)
+# We use sudo -v to validate the password without running anything
+if ! sudo -v; then
+  echo "❌ Incorrect password. Exiting."
+  exit 1
+fi
+# Keep sudo session alive for the rest of the script (optional)
+trap 'sudo -k' EXIT
+
+# -----------------------------------------------
 # Handle CLI flags
 MODE="interactive"  # default
 case "$1" in
