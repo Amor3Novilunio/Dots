@@ -27,7 +27,7 @@
 
     # ? - List of kernel modules to load at boot
     # * - "https://search.nixos.org/options?channel=25.11&show=kernelModules
-    kernelModules = [ "amdgpu" ];
+    kernelModules = [ "amdgpu" "iwlwifi" ];
 
     # ? - Additional kernel parameters
     # * - "https://search.nixos.org/options?channel=25.11&show=kernelParams

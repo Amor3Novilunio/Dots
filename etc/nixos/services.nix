@@ -81,6 +81,23 @@
       # * - "https://search.nixos.org/options?channel=25.11&query=services.pipewire.enable"
       enable = true;
 
+      # ? - 
+      # * - 
+      wireplumber = {
+        # ? - 
+        # * - 
+        enable = true;
+      };
+
+      # ? -
+      # * -
+      audio = {
+        # ? -
+        # * -
+        enable = true;
+
+      };
+
       # ? - ALSA compatibility
       # * - "https://search.nixos.org/options?channel=25.11&query=services.pipewire.alsa"
       alsa = {
@@ -101,6 +118,7 @@
         enable = true;
       };
 
+
       # ? - JACK audio server support (optional)
       # * - "https://search.nixos.org/options?channel=25.11&query=services.pipewire.jack"
       # jack={
@@ -108,6 +126,14 @@
       #   * - "https://search.nixos.org/options?channel=25.11&query=services.pipewire.jack.enable"
       #   enable = true;
       # };
+    };
+
+    # ? -
+    # * - ""
+    blueman = {
+      # ? - 
+      # * - ""
+      enable = true;
     };
 
     # ? - Automatic CPU frequency scaling for battery and performance optimization
@@ -140,6 +166,15 @@
       # ? - Enable udisks2 to manage disks, mounts, and storage devices
       # * - "https://search.nixos.org/options?channel=25.11&query=services.udisk2.enable"
       enable = true;
+    };
+
+    # ? - 
+    # * - ""
+    tor = {
+      enable = true;
+      client = {
+        enable = true; # enables tor SOCKS proxy (9050)
+      };
     };
 
     # ? - Optional session manager for media apps (enabled by default)

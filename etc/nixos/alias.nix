@@ -26,8 +26,12 @@ in {
 
     # ? - Modification
     mod-dots = "${editor} ${dir-dots}";
+    # ? - Scripts
     switch-dots = "bash ${dir-scripts}/switch.sh";
     gh-auth-switch = "bash ${dir-scripts}/gh-switch.sh";
+    storage-mount = "bash ${dir-scripts}/mount.sh";
+    storage-unmount = "bash ${dir-scripts}/un-mount.sh";
+    storage-dir = "source ${dir-scripts}/mount-directory.sh";
 
     # ? -  Nixos Alias/Override
     switch-dots-rebuild =
@@ -37,6 +41,8 @@ in {
     ls = "eza --icons";
     grep = "rg";
     find = "fd";
+    reboot = "sudo reboot now";
+    shutdown = "sudo shutdown now";
     code = "${editor}";
     # slack = "slack ${use-wayland} ${enable-wayland-support}";
     # gchrome = "google-chrome-stable ${use-wayland} ${enable-wayland-support}";

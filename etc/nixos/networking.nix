@@ -15,6 +15,18 @@
       enable = true;
     };
 
+    # ? -
+    # * -
+    firewall = {
+      # ? -
+      # * -
+      enable = true;
+
+      # ? -
+      # * -
+      allowedTCPPorts = [ 6969 ];
+    };
+
     # ? - Optional: Enable wireless support via wpa_supplicant
     # wireless.enable = true;
 

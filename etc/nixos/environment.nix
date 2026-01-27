@@ -19,6 +19,11 @@
       whois
       # ? - Network data transfer tool
       curl
+      # ? -
+      bluez
+      # ? -
+      jq
+
 
       # ----------------------------------
       # Window Manager Utilities
@@ -41,6 +46,8 @@
       btop
       # ? - File archiver for 7 z and other formats
       p7zip
+      # ? - File archiver for rar and other formats
+      unrar
       # ? - Adjust screen/backlight brightness
       brightnessctl
       # ? - Monitor temperatures, fans, and voltages
@@ -75,10 +82,19 @@
       atk
 
       # ----------------------------------
+      # Audio
+      # -----------------------------------------------------------------------------------------------------------------------
+      # ? - Onion Routing Web browser
+      pipewire
+      wireplumber
+      pulseaudio
+      alsa-utils
+
+      # ----------------------------------
       # Browser
       # -----------------------------------------------------------------------------------------------------------------------
-      # ? - Web browser
-      firefox
+      # ? - Onion Routing Web browser
+      tor-browser
 
       # ----------------------------------
       # Terminal
@@ -121,6 +137,16 @@
       python3
       # ?- High-performance HTTP and reverse proxy server
       nginx
+      # ?-
+      gcc
+      # ?-
+      openssl
+      # ?-
+      pkg-config
+      # ?-
+      cmake
+      # ?-
+      zlib
     ];
   };
 

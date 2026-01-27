@@ -17,5 +17,16 @@
       # * - "https://search.nixos.org/options?channel=25.11&query=hardware.graphics.enable32Bit"
       enable32Bit = true;
     };
+
+    # * - "https://search.nixos.org/options?channel=25.11&query=hardware.bluetooth"
+    bluetooth = {
+      # ? -
+      # * - "https://search.nixos.org/options?channel=25.11&query=hardware.bluetooth.enable"
+      enable = true;
+
+      # ? -
+      # * - "https://search.nixos.org/options?channel=25.11&query=hardware.bluetooth.powerOnBoot"
+      powerOnBoot = true;
+    };
   };
 }
